@@ -59,6 +59,9 @@
              (unless (= 1 (length (funcall (cdr parser) sentence)))
                (pcase (car parser)
                  ("PascalCase"
+                  ;; XXX: It seems like there is an issue in PascalCase parser,
+                  ;; let's do it dirty and manually give camelCase when the
+                  ;; first character is the lowercase letter.
                   (if-let* ((char (substring sentence 0 1))
                             ((string= char (downcase char))))
                       (assq "camelCase" change-case-parser-alist)
