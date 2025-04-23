@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "cycle-case-style"
          "0.1.0"
          "Cycle through case style (PascalCase, camelCase, etc)")
